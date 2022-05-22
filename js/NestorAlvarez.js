@@ -46,7 +46,7 @@ function clicCuatro() {
 let galeria = document.getElementById('galeria');
 let files = "jpg";
 let pageName = "Splatt";
-for (var i = 0; i < 9; i++){
+for (var i = 0; i < 8; i++){
     var src = "js/images/" + pageName + "-" + (i+1) + "." + files;
     var img = new Image(); 
     img.src = src;
