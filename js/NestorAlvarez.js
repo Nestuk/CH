@@ -3,12 +3,17 @@
 let ingresoCero
 let passCero
 
+document.getElementById("Logeate").disabled = true;
+
 function clicCero() {
    ingresoCero = prompt("NOMBRE:").toLowerCase()
    passCero = prompt("CLAVE:").toLowerCase()
 }
 
 // SIGN IN
+
+document.getElementById("Logeate").disabled = false;
+document.getElementById("Create").disabled = true;
 
 function clicUno() {
    ingreso = prompt("NOMBRE:\n ").toLowerCase()
