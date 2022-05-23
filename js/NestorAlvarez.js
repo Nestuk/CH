@@ -1,22 +1,30 @@
-// PASO 1
+// SIGN UP
+
+let ingresoCero
+let passCero
+
+function clicCero() {
+   ingresoCero = prompt("NOMBRE:").toLowerCase()
+   passCero = prompt("CLAVE:").toLowerCase()
+}
+
+// SIGN IN
 
 function clicUno() {
-   // NOMBRE
-   let ingreso = prompt("NOMBRE:\n ").toLowerCase()
-   while (ingreso != "cc") {
+   ingreso = prompt("NOMBRE:\n ").toLowerCase()
+   while (ingreso != ingresoCero) {
        alert("ERROR: " + ingreso + " es incorrecto")
-       let nuevoIngreso = prompt("NOMBRE:\n").toLowerCase()
+       nuevoIngreso = prompt("NOMBRE:\n").toLowerCase()
        while (nuevoIngreso === ingreso) {
            alert("ERROR: ya habías respondido " + ingreso + " y es incorrecto")
            nuevoIngreso = prompt("NOMBRE:\n").toLowerCase()
        }
        ingreso = nuevoIngreso
    }
-   // CLAVE
-   let pass = prompt("CLAVE:\n ").toLowerCase()
-   while (pass != "hh") {
+   pass = prompt("CLAVE:\n ").toLowerCase()
+   while (pass != passCero) {
        alert("ERROR: " + pass + " es incorrecto")
-       let nuevoPass = prompt("CLAVE:\n").toLowerCase()
+       nuevoPass = prompt("CLAVE:\n").toLowerCase()
        while (nuevoPass === pass) {
            alert("ERROR: ya habías respondido " + pass + " y es incorrecto")
            nuevoPass = prompt("CLAVE:\n").toLowerCase()
@@ -26,8 +34,6 @@ function clicUno() {
    document.getElementById("pasoUno").style.display = "none";
    document.getElementById("productos").style.display = "initial";
 }
-
-// FIN
 
 function clicCuatro() {
     let resultado = 0;
@@ -41,7 +47,7 @@ function clicCuatro() {
     sumar(6, 3);
     mostrar(resultado);
 }
-
+// FIN SIGN UP
 
 let galeria = document.getElementById('galeria');
 let files = "jpg";
