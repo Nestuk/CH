@@ -9,13 +9,12 @@ function clicCero() {
    ingresoCero = prompt("NOMBRE:").toLowerCase()
    passCero = prompt("CLAVE:").toLowerCase()
    document.getElementById("Create").disabled = true;
+   document.getElementById("Logeate").disabled = false;
 }
 
 // SIGN IN
 
 function clicUno() {
-   
-document.getElementById("Logeate").disabled = false;
 
    ingreso = prompt("NOMBRE:\n ").toLowerCase()
    while (ingreso != ingresoCero) {
