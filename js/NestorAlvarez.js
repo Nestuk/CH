@@ -8,14 +8,15 @@ document.getElementById("Logeate").disabled = true;
 function clicCero() {
    ingresoCero = prompt("NOMBRE:").toLowerCase()
    passCero = prompt("CLAVE:").toLowerCase()
+   document.getElementById("Create").disabled = true;
 }
 
 // SIGN IN
 
-document.getElementById("Logeate").disabled = false;
-document.getElementById("Create").disabled = true;
-
 function clicUno() {
+   
+document.getElementById("Logeate").disabled = false;
+
    ingreso = prompt("NOMBRE:\n ").toLowerCase()
    while (ingreso != ingresoCero) {
        alert("ERROR: " + ingreso + " es incorrecto")
