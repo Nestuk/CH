@@ -51,7 +51,7 @@ function clicCuatro() {
         paragraph.textContent += resultado + "$";
     }
     sumar(6, 3);
-    mostrar(mensaje);
+    mostrar(resultado);
 }
 // FIN SUMA
 
