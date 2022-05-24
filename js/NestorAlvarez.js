@@ -49,8 +49,8 @@ function clicCuatro() {
         let paragraph = document.getElementById("p");
         paragraph.textContent += resultado + "$";
     }
-    sumar(6, 3);
-    mostrar(resultado);
+//    sumar(6, 3);
+    mostrar(mensaje);
 }
 // FIN SIGN UP
 
