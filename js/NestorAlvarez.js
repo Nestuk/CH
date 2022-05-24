@@ -50,11 +50,11 @@ function clicCuatro() {
         let paragraph = document.getElementById("p");
         paragraph.textContent += resultado + "$";
     }
-//    sumar(6, 3);
+    sumar(6, 3);
     mostrar(mensaje);
 }
-
 // FIN SUMA
+
 let galeria = document.getElementById('galeria');
 let files = "jpg";
 let pageName = "Splatt";
