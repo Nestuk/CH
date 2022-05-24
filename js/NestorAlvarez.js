@@ -39,6 +39,7 @@ function clicUno() {
    document.getElementById("pasoUno").style.display = "none";
    document.getElementById("productos").style.display = "initial";
 }
+// FIN SIGN UP
 
 function clicCuatro() {
     let resultado = 0;
@@ -52,8 +53,8 @@ function clicCuatro() {
 //    sumar(6, 3);
     mostrar(mensaje);
 }
-// FIN SIGN UP
 
+// FIN SUMA
 let galeria = document.getElementById('galeria');
 let files = "jpg";
 let pageName = "Splatt";
@@ -63,4 +64,4 @@ for (var i = 0; i < 8; i++){
     img.src = src;
     galeria.appendChild(img);
 }
-
+// FIN GALERIA
