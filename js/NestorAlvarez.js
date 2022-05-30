@@ -69,12 +69,4 @@ filtros.forEach((x) => filter.appendChild(crearLi(x)));
 const menus = document.querySelector(".menues");
 menu.forEach((x) => menus.appendChild(crearLi(x)));
 
-/*
-const productos = [ 'AA', 'BB', 'CC', 'DD', 'EE', 'FF' ]
-const precios = [ 100, 200, 300, 400 ]
-const fotos = [ ' ', ' ', ' ', ' ', ' ', ' ' ]
-})*/
-
-
-
 
