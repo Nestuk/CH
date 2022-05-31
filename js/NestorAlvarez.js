@@ -1,5 +1,4 @@
 // SIGN UP
-
 let ingresoCero
 let passCero
 
@@ -13,7 +12,6 @@ function clicCero() {
 }
 
 // SIGN IN
-
 function clicUno() {
 
    ingreso = prompt("NOMBRE:\n ").toLowerCase()
@@ -39,8 +37,8 @@ function clicUno() {
    document.getElementById("pasoUno").style.display = "none";
    document.getElementById("productos").style.display = "initial";
 }
-// FIN SIGN UP
 
+// GALERIA
 let galeria = document.getElementById('galeria');
 let files = "jpg";
 let pageName = "Splatt";
@@ -50,10 +48,8 @@ for (var i = 0; i < 8; i++){
     img.src = src;
     galeria.appendChild(img);
 }
-// FIN GALERIA
 
-// ARRAYS
-
+// ARRAY DE MENUS
 const filtros = [ 'Slasher', 'Folk Horror', 'Gore', 'Muñecos', 'Psi', 'Naturalista' ]
 const menu = [ 'VHS ', 'DVD ', 'Posters ' ]
 
@@ -69,4 +65,44 @@ filtros.forEach((x) => filter.appendChild(crearLi(x)));
 const menus = document.querySelector(".menues");
 menu.forEach((x) => menus.appendChild(crearLi(x)));
 
+// CARRITO 
+class VHS {
+    constructor(nombre, precio) {
+        this.nombre = nombre
+        this.precio = precio
+    }
+}
 
+const VHS1 = new VHS('VHS', 400)
+const VHS2 = new VHS('DVD', 650)
+const carrito = []
+
+const totalCarrito = () => {
+    let sumaTotal = 0
+    carrito.forEach((producto) => {
+        sumaTotal += producto.precio
+    })
+    return sumaTotal
+}
+
+const agregarProducto = () => {
+    const productoElegido = prompt('Elegi un formato: VHS o DVD').toLowerCase()
+    switch (productoElegido) {
+        case 'vhs':
+            carrito.push(VHS1)
+            break
+        case 'dvd':
+            carrito.push(VHS2)
+            break
+    }
+    if (confirm('Desea agregar otro producto?')) {
+        agregarProducto()
+    } else {
+        let paragraph = document.getElementById("p");
+        paragraph.textContent += totalCarrito();
+    }
+}
+function clicCuatro() {
+    document.getElementById("p").innerHTML = "";
+    agregarProducto()
+}
