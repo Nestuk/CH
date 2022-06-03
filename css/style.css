@@ -3,7 +3,7 @@ button{font-weight: 600; padding: .6em 1.2em;}
 #pasoUno img, #pasoUno figure {margin: 1em;}
 figcaption {color: white;}
 #galeria img {padding:.5em;}
-#galeria img {width:20%;}
+#galeria img {width:100%;}
 small {font-size:.8em;}
 ul {margin:none; padding:none; font-size:.6em;}
 li {list-style:none;}
@@ -154,3 +154,8 @@ li {list-style:none;}
 
 /*RESET*/
 .centered {text-align: center!important;}
+
+
+.cardContainer {
+  display: flex;
+}
