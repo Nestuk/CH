@@ -1,5 +1,5 @@
 // SIGN UP
-let ingresoCero
+/*let ingresoCero
 let passCero
 
 document.getElementById("Logeate").disabled = true;
@@ -9,10 +9,10 @@ function clicCero() {
    passCero = prompt("CLAVE:").toLowerCase()
    document.getElementById("Create").disabled = true;
    document.getElementById("Logeate").disabled = false;
-}
+}*/
 
 // SIGN IN
-function clicUno() {
+/*function clicUno() {
 
    ingreso = prompt("NOMBRE:\n ").toLowerCase()
    while (ingreso != ingresoCero) {
@@ -36,27 +36,18 @@ function clicUno() {
    }
    document.getElementById("pasoUno").style.display = "none";
    document.getElementById("productos").style.display = "initial";
-}
+}*/
 
-// GALERIA
-let galeria = document.getElementById('galeria');
-let files = "jpg";
-let pageName = "Splatt";
-for (var i = 0; i < 8; i++){
-    var src = "js/images/" + pageName + "-" + (i+1) + "." + files;
-    var img = new Image(); 
-    img.src = src;
-    galeria.appendChild(img);
-}
+/////////////////////////////////////////////
 
 // ARRAY DE MENUS
 const filtros = [ 'Slasher', 'Folk Horror', 'Gore', 'Muñecos', 'Psi', 'Naturalista' ]
 const menu = [ 'VHS ', 'DVD ', 'Posters ' ]
 
 function crearLi(name) {
-  let li = document.createElement("li");
-  li.textContent = name;
-  return li;
+  let li = document.createElement("li")
+  li.textContent = name
+  return li
 }
 
 const filter = document.querySelector(".lista");
@@ -65,18 +56,49 @@ filtros.forEach((x) => filter.appendChild(crearLi(x)));
 const menus = document.querySelector(".menues");
 menu.forEach((x) => menus.appendChild(crearLi(x)));
 
-// CARRITO 
-class VHS {
-    constructor(nombre, precio) {
-        this.nombre = nombre
+/////////////////////////////////////////////
+
+// CARRITO  
+const carrito = []
+
+//clase
+class Pelicula {
+    constructor(marca, imgSrc, precio) {
+        this.marca = marca
+        this.imgSrc = imgSrc
         this.precio = precio
     }
 }
 
-const VHS1 = new VHS('VHS', 400)
-const VHS2 = new VHS('DVD', 650)
-const carrito = []
+//array productos
+const Pelicula1 = new Pelicula('The Shadow of the Cat', 'js/images/Splatt-1.jpg', 5)
+const Pelicula2 = new Pelicula('Patrulla Fantasma', 'js/images/Splatt-2.jpg', 4)
+const Pelicula3 = new Pelicula('Orgia de Terror', 'js/images/Splatt-3.jpg', 6)
 
+const productos = [Pelicula1, Pelicula2, Pelicula3]
+const cardContainer = document.getElementById('cardContainer')
+
+productos.forEach((producto) => {
+    const card = document.createElement('div')
+    card.className = 'centered card'
+    card.innerHTML = `
+            <h3 class="cardTitle"> ${producto.marca} </h3>
+            <img src="${producto.imgSrc}" class="cardImg" width="100px"><br>
+            <span class="cardPrice"> $${producto.precio} </span>
+            <button class="buttonCTA" data-id="${producto.precio}"> Agregar al Carrito </button>
+        `
+    cardContainer.append(card)
+})
+
+const Agregar = (e) => {
+    const productoElegido = e.target.getAttribute('data-id')
+    const producto = productos.find((producto) => producto.marca == productoElegido )
+    carrito.push(producto)
+}
+
+const botonesCompra = document.querySelectorAll ('.buttonCTA')
+
+///
 const totalCarrito = () => {
     let sumaTotal = 0
     carrito.forEach((producto) => {
@@ -86,23 +108,15 @@ const totalCarrito = () => {
 }
 
 const agregarProducto = () => {
-    const productoElegido = prompt('Elegi un formato: VHS o DVD').toLowerCase()
-    switch (productoElegido) {
-        case 'vhs':
-            carrito.push(VHS1)
-            break
-        case 'dvd':
-            carrito.push(VHS2)
-            break
-    }
-    if (confirm('Desea agregar otro producto?')) {
-        agregarProducto()
-    } else {
-        let paragraph = document.getElementById("p");
-        paragraph.textContent += totalCarrito();
-    }
+    let paragraph = document.getElementById("p");
+    paragraph.textContent += totalCarrito();
 }
-function clicCuatro() {
-    document.getElementById("p").innerHTML = "";
-    agregarProducto()
-}
+///
+
+
+botonesCompra.forEach((botonCompra) => {
+    botonCompra.addEventListener('click', agregarProducto)
+})
+
+
+
