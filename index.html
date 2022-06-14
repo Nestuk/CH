@@ -87,30 +87,10 @@ function store(){
     }else{
         localStorage.setItem('name', name.value);
         localStorage.setItem('pw', pw.value);
-//        document.getElementById("pasoUno").style.display = "none";
-//        document.getElementById("pasoDos").style.display = "initial";
         window.location.replace("https://nestuk.github.io/CH/2.html");
-        alert('Your account has been created');
-        //return false; // Stop Form From Going Anywhere
+        //alert('Your account has been created');
     }
 }
-
-//checking
-/*function check(){
-    document.getElementById("pasoUno").style.display = "none";
-    var storedName = localStorage.getItem('name');
-    var storedPw = localStorage.getItem('pw');
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
-    var userRemember = document.getElementById("rememberMe");
-    if(userName.value == storedName && userPw.value == storedPw){
-        //alert('You are logged in.');
-        window.location.replace("https://www.contentkingapp.com/");
-    }else{
-        alert('Error on login');
-    }
-}*/
-
 </script>
 
 </body>
