@@ -1,5 +1,5 @@
 // SIGN UP
-let ingresoCero
+/*let ingresoCero
 let passCero
 
 document.getElementById("Logeate").disabled = true;
@@ -46,7 +46,15 @@ function clicUno() {
       document.getElementById("sarasa").innerHTML = userTexto;
     }
 
-}
+}*/
+
+//MOSTAR USERNAME
+//document.getElementById('Usuario').innerHTML = ingresoCero;
+
+
+
+
+/////////////////////////////////////////////
 
 // ARRAY DE MENUS
 const filtros = [ 'Slasher', 'Folk Horror', 'Gore', 'Muñecos', 'Psi', 'Naturalista' ]
@@ -64,10 +72,11 @@ filtros.forEach((x) => filter.appendChild(crearLi(x)));
 const menus = document.querySelector(".menues");
 menu.forEach((x) => menus.appendChild(crearLi(x)));
 
-// CARRITO  
-const carrito = []
+/////////////////////////////////////////////
 
-//clase
+// Ejercicio Storage + JSON
+
+// Definimos nuestra clase modelo de producto
 class Pelicula {
     constructor(id, name, imgSrc, precio) {
         this.id = id
@@ -77,6 +86,7 @@ class Pelicula {
     }
 }
 
+// Generamos nuestros productos
 //array productos
 const Pelicula1 = new Pelicula('ID-NOM-IMG-PRE-1','The Shadow of the Cat', 'js/images/Splatt-1.jpg', 5000)
 const Pelicula2 = new Pelicula('ID-NOM-IMG-PRE-2','Patrulla Fantasma', 'js/images/Splatt-2.jpg', 7400)
@@ -89,18 +99,24 @@ const Pelicula8 = new Pelicula('ID-NOM-IMG-PRE-8','Seddok', 'js/images/Splatt-8.
 const Pelicula9 = new Pelicula('ID-NOM-IMG-PRE-9','La Amenaza Verde', 'js/images/Splatt-9.jpg', 6000)
 
 const productos = [Pelicula1, Pelicula2, Pelicula3, Pelicula4, Pelicula5, Pelicula6, Pelicula7, Pelicula8, Pelicula9]
-const cardContainer = document.getElementById('cardContainer')
 
+// Creamos un array vacio que va a ser nuestro carrito de compras
+let carrito = []
+
+// Guardamos la referencia de nuestro div donde se renderizaran nuestros productos
+const cardContainer = document.querySelector('#cardContainer')
+
+// Por cada producto generamos una nueva column
 productos.forEach((producto) => {
-    const card = document.createElement('div')
-    card.className = 'centered card'
-    card.innerHTML = `
-            <h3 class="cardTitle"> ${producto.name} </h3>
-            <img src="${producto.imgSrc}" class="cardImg" width="100px"><br>
-            <span class="cardPrice"> $${producto.precio} </span>
-            <button class="buttonCTA" data-id="${producto.id}"> Agregar al Carrito </button>
-        `
-    cardContainer.append(card)
+    const column = document.createElement('div')
+    column.className = 'column'
+    column.innerHTML = `
+        <h4 class="cardTitle">${producto.name}</h4>
+        <strong class="cardPrice"> $${producto.precio} </strong><br>
+        <img src="${producto.imgSrc}" class="cardImg thumbnail"><br>
+        <button data-id="${producto.id}" class="buttonCTA button warning"> COMPRAR </button>
+    `
+    cardContainer.append(column)
 })
 
 ///
@@ -112,22 +128,61 @@ const totalCarrito = () => {
     return sumaTotal
 }
 
-const agregarProducto = () => {
-    const elemento = document.getElementById("p");
+// Imprimo el carrito cada vez que se actualiza el array
+
+const cartContainer = document.querySelector('#cartContainer')
+
+const imprimirCarrito = () => {
+    cartContainer.innerHTML = ''
+    carrito.forEach((producto) => {
+        const cartRow = document.createElement('div')
+        cartRow.className = 'cartRow'
+        cartRow.innerHTML = `
+        <div class="cartTitle">${producto.name}</div>
+        <div class="cartPrice">$${producto.precio}</div>
+        `
+        cartContainer.append(cartRow)
+    })
+} 
+
+// Cuando el usuario haga click en un boton, a traves del parametro e nos va a llegar cual es el boton en cuestion. 
+const agregarProducto = (e) => {
+    const productoElegido = e.target.getAttribute('data-id')
+    const producto = productos.find((producto) => producto.id == productoElegido)
+    carrito.push(producto)
+    imprimirCarrito()
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    const elemento = document.getElementById("pp");
+    document.getElementById('pp').style.display = 'block';
     elemento.innerHTML = `$${totalCarrito()}`
 }
 
-///
-const Agregar = (e) => {
-    const productoElegido = e.target.getAttribute('data-id')
-    const producto = productos.find((producto) => producto.id == productoElegido )
-    carrito.push(producto)
-    agregarProducto()
-}
-const botonesCompra = document.querySelectorAll ('.buttonCTA')
-botonesCompra.forEach((boton) => {
-    boton.addEventListener('click', Agregar)
+// Una vez que nuestras cards se renderizaron, accedemos a todos nuestros botones a traves de la clase en comun y le agregamos la escucha del evento click
+const botonesCompra = document.querySelectorAll('.buttonCTA')
+botonesCompra.forEach((botonCompra) => {
+    botonCompra.addEventListener('click', agregarProducto)
 })
 
 
+// Al cargar la pagina, verifico que exista algo guardado en el carrito y lo imprimo
+if (localStorage.getItem('carrito')) {
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+    imprimirCarrito()
+}
+
+
+
+// Darle Logica al boton de Vaciar Carrito
+
+const vaciarCarrito = () => {
+    if (localStorage.getItem('carrito')) {
+        localStorage.removeItem('carrito')
+    }
+    carrito = []
+    imprimirCarrito()
+    document.getElementById('pp').style.display = 'none';
+}
+
+const vaciarCarritoBtn = document.querySelector('#vaciarCarrito')
+vaciarCarritoBtn.addEventListener('click', vaciarCarrito)
 
