@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SPLATTER SIMULATOR V1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body class="centered">
+
+    <div class="row">
+
+        <div class="column login">
+            <form name='form-login'>
+
+                <h1>REGISTER</h1>
+
+                <label for="name">Email</label>
+                <input type="email" id="name" placeholder="Username" required>
+                <span id="alert-1"></span>
+                <label for="pw">Password</label>
+                <input type="password" id= "pw" placeholder="Password" required>
+                <span id="alert-2"></span>
+                <ul class="helper-text">
+                    <li class="length">Must be at least 8 characters long.</li>
+                    <li class="lowercase">Must contain a lowercase letter.</li>
+                    <li class="uppercase">Must contain an uppercase letter.</li>
+                    <li class="special">Must contain a number or special character.</li>
+                </ul>
+                <input class="button" id="rgstr_btn" type="submit" value="Register" onclick="store()">
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script type="text/javascript" src="js/1.js" charset="utf-8"></script>
+
+</body>
+</html>
