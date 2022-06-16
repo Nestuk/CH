@@ -1,1 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+}
 
+/*********** RESET ***********/
+body{background-color:black; background-image:url(../js/images/BG.jpg); background-size:cover;}
+button{font-weight: 600; padding: .6em 1.2em;}
+small {font-size:.8em;}
+ul {margin:none; padding:none; font-size:1em;}
+li {list-style:none;}
+label {color:#fff;}
+#pasoUno img, #pasoUno figure {margin: 1em;}
+
+.row div {padding:2%; border-radius:5px; color:white; transition:background-color 1s;}
+.row article {color:white; font-size:14px;}
+.cardTitle, .buttonCTA, .cardPrice {font-size:18px;}
+.top-bar, .top-bar ul, .callout.large {background-color:black; color: white;}
+.top-bar-right {background-color: black; padding: 1em; color: white; font-size: .8em;}
+.login {text-align: center;}
