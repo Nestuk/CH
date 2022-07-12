@@ -1,4 +1,4 @@
-fetch('https://62cdde90066bd2b6992d6de1.mockapi.io/JASON/SPLATT')
+fetch('https://mockapi.io/clone/62cdde90066bd2b6992d6de2')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.log(error));
