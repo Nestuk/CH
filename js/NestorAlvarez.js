@@ -1,4 +1,4 @@
-fetch('https://github.com/Nestuk/CH/blob/CH/pelis.json')
+fetch('https://62cdde90066bd2b6992d6de1.mockapi.io/JASON/SPLATT')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.log(error));
