@@ -2,62 +2,62 @@
     "id": "ID-NOM-IMG-PRE-1",
     "filtro": "Slasher",
     "name": "The Shadow of the Cat",
-    "imgSrc": "js/images/Splatt-1.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-1.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-2",
     "filtro": "Slasher",
     "name": "Patrulla Fantasma",
-    "imgSrc": "js/images/Splatt-2.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-2.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-3",
     "filtro": "Folk",
     "name": "Orgia de Terror",
-    "imgSrc": "js/images/Splatt-3.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-3.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-4",
     "filtro": "Folk",
     "name": "Metempsyco",
-    "imgSrc": "js/images/Splatt-4.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-4.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-5",
     "filtro": "Folk",
     "name": "Se me Hiela la Sangre",
-    "imgSrc": "js/images/Splatt-5.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-5.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-6",
     "filtro": "Gore",
     "name": "Al Caer de la Noche",
-    "imgSrc": "js/images/Splatt-6.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-6.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-7",
     "filtro": "Toys",
     "name": "La Isla del Terror",
-    "imgSrc": "js/images/Splatt-7.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-7.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-8",
     "filtro": "Psi",
     "name": "Seddok",
-    "imgSrc": "js/images/Splatt-8.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-8.jpg",
     "precio": 25
    },
   {
-    "id": "ID-NOM-IMG-PRE-1",
+    "id": "ID-NOM-IMG-PRE-9",
     "filtro": "Naturalista",
     "name": "La Amenaza Verde",
-    "imgSrc": "js/images/Splatt-9.jpg",
+    "imgSrc": "https://nestuk.github.io/CH/js/images/Splatt-9.jpg",
     "precio": 25
    }
