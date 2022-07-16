@@ -27,6 +27,7 @@ function populateData(data) {
               <button data-id="${producto.id}" class="agregar-al-carro button hollow warning"> COMPRAR </button>
           </article>
           `
+          column.addEventListener('click', agregarAlCarroClicked);
           cardContainer.append(column)
       })
 }
@@ -73,10 +74,6 @@ carroModalOverlay.addEventListener('click', (e) => {
 // agregar productos
 const agregarAlCarro = document.getElementsByClassName('agregar-al-carro');
 const productRow = document.getElementsByClassName('product-row');
-for (var i = 0; i < agregarAlCarro.length; i++) {
-  button = agregarAlCarro[i];
-  button.addEventListener('click', agregarAlCarroClicked);
-}
 function agregarAlCarroClicked (event) {
   button = event.target;
   var cartItem = button.parentElement;
