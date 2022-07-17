@@ -11,7 +11,7 @@
 
 /*********** RESET ***********/
 body{background-color:black; background-image:url(../js/images/BG.jpg); background-size:cover;}
-button{font-weight: 600; padding: .6em 1.2em;}
+button{font-weight: 600; padding:0; margin:0!important;}
 small {font-size:.8em;}
 ul {margin:none; padding:none; font-size:1em;}
 li {list-style:none;}
@@ -19,21 +19,19 @@ label {color:#fff;}
 #pasoUno img, #pasoUno figure {margin: 1em;}
 .row div {color:#fff;}
 .row article {color:#fff; font-size:14px;}
-.cardTitle, .buttonCTA, .cardPrice {font-size:18px;}
+.cardTitle, .buttonCTA, .cardPrice {font-size:18px; font-weight:bold;}
 .top-bar, .top-bar ul, .callout.large {background-color:#000; color:#fff;}
 .top-bar-right {background-color:#000; padding:1em; color:#fff; font-size:.8em;}
 .login {text-align:center;}
 .column {margin-bottom:5%; width: 25%!important;}
-.column:last-child, .columns:last-child {
-    float: left;
-}
-.lista label {color:yellowgreen!important;}
+.column:last-child, .columns:last-child {float:left;}
+.lista label {color:goldenrod!important;}
 
-/*#cardContainer{display: flex;}*/
+#galeria {min-height:50vh;}
 
 /*********** MODAL ***********/
 .cart-modal-overlay {
-  position: fixed;
+  position:fixed;
   top:0;
   left:0;
   width:100%;
@@ -53,14 +51,14 @@ label {color:#fff;}
   overflow-x:hidden;
 }
 #cerrar-btn {
-  font-size:1.5rem;
+  font-size:1.8rem;
   float:right;
-  margin:.5em 2em 0 0;
+  margin:1em;
   color:white;
   cursor:pointer;
 }
 .cart-is-empty {
-  color: white;
+  color:white;
   text-align:center;
   font-size:1.5rem;
   margin-bottom:1em;
@@ -72,15 +70,16 @@ label {color:#fff;}
 }
 .cart-total {
   color:white;
+  text-align:center;
+  margin:0 auto!important;
+  padding:0!important;
 }
 .total-price {
-  color: white;
-  font-size: 2rem;
-  display: block;
+  color:white;
 }
 #cart, .cart-quantity {font-size:24px!important; font-weight:bold;}
 #cart:hover {cursor:pointer;}
-.cart-modal, .cart-quantity, #cart {color:yellowgreen!important;}
+.cart-modal, .cart-quantity, #cart {color:goldenrod!important;}
 .intro{
    padding:60px 30px;
    color:#333;
@@ -100,82 +99,69 @@ label {color:#fff;}
    display:block;
    margin-top:20px;
 }
-
-
 .product-rows {
-  margin-top: 3em;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top:3em;
+  width:95%;
+  margin-left:auto;
+  margin-right:auto;
   
 }
-
 .product-row {
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
 }
-
 .cart-image {
-  width: 10rem;
-  margin: 1em;
+  width:10rem;
+  margin:1em;
 }
-
 .cart-price {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bolder;
+  color:white;
+  font-size:1.5rem;
+  font-weight:bolder;
 }
-
 .product-quantity {
-  width: 4rem;
-  font-size: 2rem;
-  margin-left: 3rem;
+  width:4rem;
+  font-size:2rem;
+  margin:1em;
 }
-
 .remove-btn {
-  padding: 1em 2em;
-  background-color: red;
-  color: white;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 3rem;
-  font-weight: bolder;
-  font-size: 1rem;
+  padding:1em 2em;
+  background-color:red;
+  color:white;
+  outline:none;
+  border:none;
+  cursor:pointer;
+  margin-left:3rem;
+  font-weight:bolder;
 }
-
 .remove-btn:active {
-  transform: translateY(5px);
+  transform:translateY(5px);
 }
-
-@media (max-width: 1000px){
+@media (max-width:1000px){
   .cart-modal {
-    width: 100vw;
-  } 
-  
+    width:100vw;
+  }
   .product-row {
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 2em;
+    flex-direction:column;
+    text-align:center;
+    margin-bottom:2em;
   }
-  
   .remove-btn {
-    margin: 0
+    margin:0
   }
-  
   .product-quantity {
-    margin: .5em 0 .5em 0
+    margin:.5em 0 .5em 0
   }
 }
 
 /*********** ***********/
 a.btn {
-  text-decoration: none;
-  color: #666;
-  border: 2px solid #666;
-  padding: 10px 15px;
-  display: inline-block;
-  margin-left: 5px;
+  text-decoration:none;
+  color:#666;
+  border:2px solid #666;
+  padding:10px 15px;
+  display:inline-block;
+  margin-left:5px;
 }
 a.btn:hover{
   background: #666;
@@ -188,55 +174,28 @@ a.btn:hover{
   font-weight:normal;
   margin-right:10px;
 }
-.github:before{content:"\f09b"}
-.down:before{content:"\f019"}
-.back:before{content:"\f112"}
-
 article li{
-  color:yellowgreen;
+  color:goldenrod;
   font-size:15px;
   margin-left:33px;
   line-height:1.5;
   padding:5px;
 }
 article h1, article h2, article h3, article h4, article p{
-  color:yellowgreen;
+  color:goldenrod;
 }
 article p{
   font-size:15px;
   line-height:1.5;
 }
-.set-overlayer, .set-glass, .set-sticky {
-  cursor:pointer;
-  height:45px;
-  line-height:45px;
-  padding:0 15px;
-  color:#333;
-  font-size:16px;
-}
-.set-overlayer:after, .set-glass:after, .to-active:after, .set-sticky:after {
-  font-family:FontAwesome;
-  font-size:18pt;
-  position:relative;
-  float:right;
-}
-.set-overlayer:after, .set-glass:after, .set-sticky:after {
-  content:"\f204";
-  transition:.6s;
-}
-.to-active:after {
-  content:"\f205";
-  color:#008080;
-  transition:.6s;
-}
-.set-overlayer, .set-glass, .set-sticky, .source, .theme-tray {
-  margin:10px;
-  background:#f2f2f2;
-  border-radius:5px;
-  border:2px solid #f1f1f1;
-  box-sizing:border-box;
-}
+
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 1280px){
+}
+@media only screen and (max-width: 728px){
+  .column {
+      width:50%!important;
+      min-height:280px;
+  }
 }
