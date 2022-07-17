@@ -14,16 +14,15 @@ function populateData(data) {
       const peli = new Pelicula(e.id, e.filtro, e.name, e.imgSrc, e.precio)
       productos.push(peli)
       })
-
       // Column
       productos.forEach((producto) => {
           const column = document.createElement('div')
           column.className = 'column'
           column.innerHTML = `
           <article class="${producto.filtro}">
-              <h4 class="cardTitle">${producto.name}</h4>
-              <strong class="cardPrice product-price"> $${producto.precio} </strong><br>
               <img src="${producto.imgSrc}" class="product-image cardImg thumbnail"><br>
+              <h4 class="cardTitle">${producto.name}</h4>
+              <strong class="cardPrice product-price"> $${producto.precio} </strong><br><br>
               <button data-id="${producto.id}" class="agregar-al-carro button hollow warning"> COMPRAR </button>
           </article>
           `
@@ -41,10 +40,7 @@ class Pelicula {
         this.precio = precio
     }
 }
-
 let productos = []
-
-
 
 /////////////////////////////////// MODAL
 // abrir modal
@@ -181,3 +177,4 @@ function compraBtnClicked () {
   actualizarCarroPrecio()
 }
 // fin de comprar
+
